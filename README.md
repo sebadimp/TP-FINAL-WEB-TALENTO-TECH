@@ -25,6 +25,6 @@ El proyecto cuenta con:
 5) carrito.html - Carga los productos comprados en una lista utilizando javascript. Se le añadio las ocpiones de borrar y finalizar compra
 
 # Página Web
-1) Netlify: [www.milopasteleria.netlify.app](https://milopasteleria.netlify.app)
+1) Netlify: https://milopasteleria.netlify.app/
 2) Carpeta drive: https://drive.google.com/drive/folders/1g24cyB6r4zdZm99XdJ6rQB1bykEi5iVo?usp=sharing
 3) Repositorio Github: https://github.com/sebadimp/TP-PREENTREGA-WEB
