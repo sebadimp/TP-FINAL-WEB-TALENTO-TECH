@@ -1,0 +1,130 @@
+{
+"productos": [
+      {
+        "id":1,
+        "nombre": "Torta Chocolatoza",
+        "precio": 36000,
+        "categoria": "Tortas",
+        "imagen": "./img/chocolatoza.webp"
+      },
+      {
+        "id":2,
+        "nombre": "Torta Humeda de Banana",
+        "precio": 30500,
+        "categoria": "Tortas",
+        "imagen": "./img/humedabanana.webp"
+      },
+      {
+        "id":3,
+        "nombre": "Torta Brownie",
+        "precio": 32000,
+        "categoria": "Tortas",
+        "imagen": "./img/brownie.webp"
+      },
+      {
+        "id":4,
+        "nombre": "Torta Oreo",
+        "precio": 29500,
+        "categoria": "Tortas",
+        "imagen": "./img/chocooreo.jpg"
+      },
+      {
+        "id":5,
+        "nombre": "Torta Red Velvet",
+        "precio": 31500,
+        "categoria": "Tortas",
+        "imagen": "./img/redvelvet.jpg"
+      },
+      {
+        "id":6,
+        "nombre": "Torta Carrot",
+        "precio": 32500,
+        "categoria": "Tortas",
+        "imagen": "./img/carrot.jpg"
+      },
+      {
+        "id":7,
+        "nombre": "Alfajor de Frutos Rojos",
+        "precio": 2000,
+        "categoria": "Alfajores",
+        "imagen": "./img/alfajor-fr.jpg"
+      },
+      {
+        "id":8,
+        "nombre": "Alfajor de Chocolate",
+        "precio": 3000,
+        "categoria": "Alfajores",
+        "imagen": "./img/alfajor-choco.jpg"
+      },
+      {
+        "id":9,
+        "nombre": "Alfajor de Maicena",
+        "precio": 2500,
+        "categoria": "Alfajores",
+        "imagen": "./img/alfajor-maicena.webp"
+      },
+      {
+        "id":10,
+        "nombre": "Alfajor Algarroba",
+        "precio": 2000,
+        "categoria": "Alfajores",
+        "imagen": "./img/alfajor4.jpg"
+      },
+      {
+        "id":11,
+        "nombre": "Alfajor Oreo",
+        "precio": 3000,
+        "categoria": "Alfajores",
+        "imagen": "./img/alfajor5.jpg"
+      },
+      {
+        "id":12,
+        "nombre": "Alfajor Milo",
+        "precio": 3000,
+        "categoria": "Alfajores",
+        "imagen": "./img/alfajor6.jpg"
+      },
+      {
+        "id":13,
+        "nombre": "Macaron Chocolate Blanco",
+        "precio": 3000,
+        "categoria": "Macarons",
+        "imagen": "./img/macaronblanco.jpg"
+      },
+      {
+        "id":14,
+        "nombre": "Macaron de Frambuesa",
+        "precio": 3000,
+        "categoria": "Macarons",
+        "imagen": "./img/macaronfrutilla.jpg"
+      },
+      {
+        "id":15,
+        "nombre": "Macaron de Chocolate",
+        "precio": 2000,
+        "categoria": "Macarons",
+        "imagen": "./img/macaronchoco.jpg"
+      },
+      {
+        "id":16,
+        "nombre": "Macaron de Coco",
+        "precio": 2500,
+        "categoria": "Macarons",
+        "imagen": "./img/macaroncoco.jpg"
+      },
+      {
+        "id":17,
+        "nombre": "Macaron de Limon",
+        "precio": 2500,
+        "categoria": "Macarons",
+        "imagen": "./img/macaronlimon.jpg"
+      },
+      {
+        "id":18,
+        "nombre": "Macaron de Pistacho",
+        "precio": 2000,
+        "categoria": "Macarons",
+        "imagen": "./img/macaronpistacho.jpg"
+      }
+    ]
+}

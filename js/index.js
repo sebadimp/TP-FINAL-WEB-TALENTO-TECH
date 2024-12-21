@@ -1,0 +1,134 @@
+const productos = [];
+
+// Carrito de compras
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+//carga los productos desde el JSON
+const fetchProductos = async () => {
+    try {
+        const response = await fetch('./json/productos.json');
+        if (!response.ok) {
+            throw new Error('No se pudo cargar el archivo JSON');
+        }
+        const data = await response.json();
+        productos.push(...(data.productos || []));
+        cargarProductosAleatorios(6);
+    } catch (error) {
+        console.error('Error al cargar los productos:', error);
+    }
+};
+
+/**
+ * Carga productos en cards
+ * @param {number} cantidad - Cantidad de productos aleatorios a mostrar
+ */
+const cargarProductosAleatorios = (cantidad) => {
+    const productosContainer = document.getElementById("contenedor-productos");
+    if (!productosContainer) return;
+
+    productosContainer.innerHTML = "";
+
+    // Obtener productos aleatorios
+    const productosAleatorios = obtenerProductosAleatorios(productos, cantidad);
+
+    productosAleatorios.forEach(renderizarProducto);
+};
+
+
+
+// Función para obtener productos aleatorios
+function obtenerProductosAleatorios(array, cantidad) {
+    const productosAleatorios = [];
+    const indicesSeleccionados = new Set();
+
+    while (productosAleatorios.length < cantidad) {
+        const indice = Math.floor(Math.random() * array.length);
+        if (!indicesSeleccionados.has(indice)) {
+            productosAleatorios.push(array[indice]);
+            indicesSeleccionados.add(indice);
+        }
+    }
+
+    return productosAleatorios;
+}
+
+
+// Inicialización al cargar el DOM
+document.addEventListener("DOMContentLoaded", () => {
+    fetchProductos();
+    actualizarContador();
+
+    if (window.location.pathname.includes("carrito.html")) {
+        mostrarCarrito();
+    }
+});
+
+/**
+ * Carga productos en cards por categoria
+ * @param {string} [categoria] - Categoría de productos a mostrar
+ */
+const cargarProductos = (categoria) => {
+    const productosContainer = document.getElementById("contenedor-productos");
+    if (!productosContainer) return;
+
+    productosContainer.innerHTML = "";
+
+    const productosFiltrados = categoria ? productos.filter(p => p.categoria === categoria) : productos;
+
+    productosFiltrados.forEach(renderizarProducto);
+};
+
+/**
+ * Renderiza un producto individual
+ * @param {Object} producto - Producto a renderizar
+ * 
+ */
+const renderizarProducto = ({ imagen, nombre, precio }) => {
+    const card = document.createElement("div");
+    card.innerHTML = `
+        <div class="producto-card">
+            <img src="${imagen}" class="card-img-top" alt="${nombre}" title="${nombre}">
+            <div>
+                <h3>${nombre}</h3>
+                <p>$${precio}</p>
+                <button class="btn btn-primary" onclick="agregarAlcarrito('${nombre}', ${precio})" >Añadir al Carrito</button>
+            </div>
+        </div>
+    `;
+    document.getElementById("contenedor-productos").appendChild(card);
+};
+
+
+
+/** @param {string} categoria - Categoría de productos a mostrar */
+
+const mostrarCategoria = (categoria) => cargarProductos(categoria);
+
+
+const agregarAlcarrito = (nombre,precio) =>{
+    //agregar el producto como un objeto al carrito
+    carrito.push({nombre,precio})
+
+    // actualizar el contador visual del carrito
+    actualizarContador()
+    // muestra un alerta de confirmacion
+    alert(`Se agrego ${nombre} al carrito`)
+}
+
+
+// funcion para actualizar el contador del carrito
+const actualizarContador = ()=>{
+    // Obtener el contador en la página principal
+    const contadorCarrito = document.getElementById("contador-carrito");
+    if (contadorCarrito) {
+        // Actualizar el contador de productos en el carrito
+        contadorCarrito.textContent = carrito.length;
+    }
+
+}
+
+// Guarda el contenido del carrito en el almacenamiento local antes de cerrar la pagina
+
+window.addEventListener("beforeunload",()=>{
+localStorage.setItem("carrito",JSON.stringify(carrito))
+});
