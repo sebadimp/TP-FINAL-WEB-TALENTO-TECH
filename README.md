@@ -27,4 +27,4 @@ El proyecto cuenta con:
 # Página Web
 1) Netlify: https://milopasteleria.netlify.app/
 2) Carpeta drive: https://drive.google.com/drive/folders/1g24cyB6r4zdZm99XdJ6rQB1bykEi5iVo?usp=sharing
-3) Repositorio Github: https://github.com/sebadimp/TP-PREENTREGA-WEB
+3) Repositorio Github: https://github.com/sebadimp/TP-FINAL-WEB-TALENTO-TECH
